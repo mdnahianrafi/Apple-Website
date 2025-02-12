@@ -1,0 +1,35 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import React from 'react'
+import { watchImg,rightImg } from '../utils'
+import VideoCarousel from './VideoCarousel'
+
+
+const Highlights = () => {
+  useGSAP(()=>{
+    gsap.to('#title' ,{opacity:1,y:0})
+    gsap.to('#link' ,{opacity:1,y:0,duration:1, stagger:0.25})
+  },[])
+  return (
+    <section id='highlights' className='w-screen overflow-hidden h-full sm:py-32 py-20 sm:px-10 px-5 bg-[#101010]'>
+      <div className='max-w-6xl mb-12 mx-auto'>
+<h1 id="title" className='px-5 text-[#86868b] lg:text-6xl md:text-5xl text-3xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20'>
+ Get the highlights.
+</h1>
+
+<div className='flex flex-wrap justify-end gap-5'>
+  <p id='link' className='text-blue-400 hover:underline cursor-pointer flex items-center text-xl opacity-0 translate-y-20'>Watch the film
+    <img src={watchImg} alt='watch' className='ml-2 mt-[2px]'/>
+  </p>
+  <p id='link' className='text-blue-400 hover:underline cursor-pointer flex items-center text-xl opacity-0 translate-y-20'>Watch the event
+  <img src={rightImg} alt='right' className=' ml-2 mt-[2px]'/>
+  </p>
+</div>
+<VideoCarousel/>
+      </div>
+
+    </section>
+  )
+}
+
+export default Highlights
