@@ -29,7 +29,7 @@ const HowItWorks = () => {
 
   return (
     <section className="sm:py-32 py-20 sm:px-10 px-5">
-      <div className="max-w-6xl">
+      <div className="max-w-6xl mx-auto">
         <div id="chip" className="flex justify-center items-center w-full my-20">
           <img src={chipImg} alt="chip" width={180} height={180} />
         </div>
